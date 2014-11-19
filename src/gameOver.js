@@ -45,10 +45,7 @@ var gameOverLayer = cc.Layer.extend({
                 event: cc.EventListener.KEYBOARD,
 
                 onKeyPressed: function(key, event) {
-                    cc.LoaderScene.preload(g_resources, function() {
-                        cc.log("Key Pressed: " + key.toString());
-                        cc.director.runScene(new menuScene());
-                    }, this);
+                    cc.director.runScene(new menuScene());
                 }
             }, this);
         }

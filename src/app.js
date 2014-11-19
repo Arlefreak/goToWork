@@ -41,24 +41,16 @@ var menuLayer = cc.Layer.extend({
         if (cc.sys.capabilities.hasOwnProperty('keyboard')) {
             cc.eventManager.addListener({
                 event: cc.EventListener.KEYBOARD,
-
                 onKeyPressed: function(key, event) {
-                    cc.LoaderScene.preload(g_resources, function() {
-                        cc.log("Key Pressed: " + key.toString());
-                        cc.director.runScene(new gameScene());
-                    }, this);
+                    cc.director.runScene(new gameScene());
                 }
             }, this);
         }
         if (cc.sys.capabilities.hasOwnProperty('touches')) {
             cc.eventManager.addListener({
                 event: cc.EventListener.TOUCH_ONE_BY_ONE,
-
                 onTouchBegan: function(touch, event) {
-                    cc.LoaderScene.preload(g_resources, function() {
-                        cc.log("Key Pressed: " + key.toString());
-                        cc.director.runScene(new gameScene());
-                    }, this);
+                    cc.director.runScene(new gameScene());
                 }
             }, this);
         }
