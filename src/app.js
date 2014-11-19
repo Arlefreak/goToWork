@@ -8,7 +8,8 @@ var menuLayer = cc.Layer.extend({
         ctx.imageSmoothingEnabled = false;
         ctx.webkitImageSmoothingEnabled = false;
         ctx.mozImageSmoothingEnabled = false;
-
+        cc.audioEngine.playMusic(res.track_mp3, true);
+        this.scheduleUpdate();
         /////////////////////////////
         // 2. add a menu item with "X" image, which is clicked to quit the program
         //    you may modify it.

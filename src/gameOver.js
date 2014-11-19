@@ -49,6 +49,14 @@ var gameOverLayer = cc.Layer.extend({
                 }
             }, this);
         }
+        if (cc.sys.capabilities.hasOwnProperty('touches')) {
+            cc.eventManager.addListener({
+                event: cc.EventListener.TOUCH_ONE_BY_ONE,
+                onTouchBegan: function(touch, event) {
+                    cc.director.runScene(new menuScene());
+                }
+            }, this);
+        }
 
         return true;
     }

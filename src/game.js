@@ -135,7 +135,7 @@ var gameLayer = cc.Layer.extend({
                 event: cc.EventListener.TOUCH_ONE_BY_ONE,
 
                 onTouchBegan: function(touch, event) {
-                    if (touches[0].getLocationX() > size.width / 2) {
+                    if (touch.getLocationX() > size.width / 2) {
                         that.moveRight();
                     } else {
                         that.moveLeft();
